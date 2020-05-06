@@ -40,7 +40,7 @@
 <meta itemprop="description" content="Guide to Learning CPP">
 <meta itemprop="datePublished" content="2020-04-25T00:36:11&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-25T00:36:11&#43;08:00" />
-<meta itemprop="wordCount" content="6047">
+<meta itemprop="wordCount" content="5754">
 
 
 
@@ -309,12 +309,13 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/c-/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6047words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 13minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5754words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 12minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <ul>
+      <p><strong>1.new 与 malloc</strong></p>
+<ul>
 <li>new 是C++的操作符，malloc是C的标准库函数</li>
 <li>new会调用构造函数，而malloc()不会</li>
 <li>new返回指定类型的指针，而malloc()返回void*</li>
@@ -374,7 +375,7 @@
 </li>
 </ul>
 <p><strong>内部实现</strong></p>
-<p>内部实现<a href="https://blog.csdn.net/gammag/article/details/88655744">https://blog.csdn.net/gammag/article/details/88655744</a></p>
+<p><a href="https://blog.csdn.net/gammag/article/details/88655744">https://blog.csdn.net/gammag/article/details/88655744</a></p>
 <p><strong>3. 虚函数</strong></p>
 <p><strong>虚函数的作用</strong>
 C++中的虚函数的作用主要是实现了多态的机制。基类定义虚函数，子类可以重写该函数；在派生类中对基类定义的虚函数进行重写时，需要在派生类中声明该方法为虚方法。</p>
@@ -384,10 +385,11 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
 <p>1、当类中存在虚函数里.则编译器会在编译期自动的给该类生成一个函数表，并在所有该类的对像中放入一个隐式变量vptr,该变量是一个指针变量，它的值指向那个类中的由编译器生成的虚函数表.</p>
 <p>2、每个类自己的虚函数入口都在这张表中维护，调用方法的时候会隐式的传入一个this指针，然后系统会根据this指针找到对应的vptr,进而找到对应的虚函数表，找到真正方法的地址，然后才去调用这个方法，这可以叫动态绑定。</p>
 <p>3、虚函数表存放重写的虚函数，当基类的指针指向派生类的对象时，调用虚函数时都会根据vptr来选择虚函数，而基类的虚函数在派生类里已经被改写或者说已经不存在了，所以也就只能调用派生类的虚函数版本了.</p>
-<p>实现机制
-<a href="https://www.cnblogs.com/malecrab/p/5572730.html">https://www.cnblogs.com/malecrab/p/5572730.html</a>
-<a href="https://www.cnblogs.com/yinbiao/p/11603618.html">https://www.cnblogs.com/yinbiao/p/11603618.html</a>
-vptr问题<a href="https://www.cnblogs.com/yangguang-it/p/6547314.html">https://www.cnblogs.com/yangguang-it/p/6547314.html</a></p>
+<p>实现机制</p>
+<p><a href="https://www.cnblogs.com/malecrab/p/5572730.html">https://www.cnblogs.com/malecrab/p/5572730.html</a></p>
+<p><a href="https://www.cnblogs.com/yinbiao/p/11603618.html">https://www.cnblogs.com/yinbiao/p/11603618.html</a></p>
+<p>vptr问题</p>
+<p><a href="https://www.cnblogs.com/yangguang-it/p/6547314.html">https://www.cnblogs.com/yangguang-it/p/6547314.html</a></p>
 <p><strong>析构函数可以是虚函数吗</strong></p>
 <p>如果基类会被继承，则需要将析构函数设置为虚函数。</p>
 <p>基类指针可以指向派生类的对象（多态性），如果删除该指针delete[] p;就会调用该指针指向的派生类析构函数，而派生类的析构函数又会自动调用基类的析构函数，这样整个派生类的对象完全被释放。如果析构函数不被声明为虚函数，则编译器实施静态绑定，在删除基类指针时，只会调用基类的析构函数而不调用派生类的析构函数，这样就会造成派生类对象析构不完全。所以，将析构函数声明为虚函数是十分必要的。</p>
@@ -424,13 +426,14 @@ C++内存分为5个区：</p>
 <p><strong>5.常见设计模式</strong></p>
 <p>详细链接</p>
 <p><a href="https://blog.csdn.net/u010993820/article/details/80968933">https://blog.csdn.net/u010993820/article/details/80968933</a></p>
-<p>单例模式详解<a href="https://blog.csdn.net/zhanghuaichao/article/details/79459130">https://blog.csdn.net/zhanghuaichao/article/details/79459130</a></p>
+<p>单例模式详解</p>
+<p><a href="https://blog.csdn.net/zhanghuaichao/article/details/79459130">https://blog.csdn.net/zhanghuaichao/article/details/79459130</a></p>
 <p><strong>6.inline</strong></p>
 <p>C++ 用 inline 关键字较好地解决了函数调用开销的问题。</p>
 <p>增加了 inline 关键字的函数称为“内联函数”。内联函数和普通函数的区别在于：当编译器处理调用内联函数的语句时，不会将该语句编译成函数调用的指令，而是直接将整个函数体的代码插人调用语句处，就像整个函数体在调用处被重写了一遍一样。</p>
 <p>有了内联函数，就能像调用一个函数那样方便地重复使用一段代码，而不需要付出执行函数调用的额外开销。很显然，使用内联函数会使最终可执行程序的体积增加。以时间换取空间，或增加空间消耗来节省时间，这是计算机学科中常用的方法。</p>
 <p>内联函数中的代码应该只是很简单、执行很快的几条语句。若比较复杂则不会判为内联函数。</p>
-<p>详细<a href="http://c.biancheng.net/view/199.html">http://c.biancheng.net/view/199.html</a></p>
+<p><a href="http://c.biancheng.net/view/199.html">http://c.biancheng.net/view/199.html</a></p>
 <h2 id="stl-源码内容">STL 源码内容</h2>
 <p><strong>1.STL的vector底层扩容</strong></p>
 <p>vector实际上就是一个动态数组，底层是一段连续的线性内存空间。使用三个迭代器表示（指针）</p>
@@ -486,7 +489,8 @@ C++内存分为5个区：</p>
 <li>**物理层(比特流):**设备之间比特流的传输，物理接口，电气特性等。</li>
 </ol>
 <p>Q2.三次握手四次挥手（状态转换）</p>
-<p>三次握手四次挥手相关问题<a href="https://www.jianshu.com/p/29868fb82890">https://www.jianshu.com/p/29868fb82890</a></p>
+<p>三次握手四次挥手相关问题</p>
+<p><a href="https://www.jianshu.com/p/29868fb82890">https://www.jianshu.com/p/29868fb82890</a></p>
 <p>###三次握手###
 <strong>LISTEN:</strong> 服务器端等待连接的状态。服务器经过 socket，bind，listen 函数之后进入此状态，开始监听客户端发过来的连接请求。此称为应用程序被动打开（等到客户端连接请求）。</p>
 <p>**SYN_SENT：**第一次握手发生阶段，客户端发起连接。客户端调用 connect，发送 SYN 给服务器端，然后进入 SYN_SENT 状态，等待服务器端确认（三次握手中的第二个报文）。如果服务器端不能连接，则直接进入CLOSED状态。</p>
@@ -496,7 +500,8 @@ C++内存分为5个区：</p>
 TCP握手挥手详解</p>
 <p><a href="https://www.jianshu.com/p/29868fb82890">https://www.jianshu.com/p/29868fb82890</a></p>
 <p>###linux###
-基本命令<a href="https://blog.csdn.net/qq_34926773/article/details/82216926">https://blog.csdn.net/qq_34926773/article/details/82216926</a></p>
+基本命令</p>
+<p><a href="https://blog.csdn.net/qq_34926773/article/details/82216926">https://blog.csdn.net/qq_34926773/article/details/82216926</a></p>
 <p>Linux的proc目录：/proc是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，用户可以通过这些文件查看有关系统硬件及当前正在运行进程的信息，甚至可以通过更改其中某些文件来改变内核的运行状态。</p>
 <p>详情：<a href="https://blog.csdn.net/mediatec/article/details/88578101">https://blog.csdn.net/mediatec/article/details/88578101</a></p>
 <p>**查看端口状态：**netstat -ntulp |grep 80 //查看所有80端口使用情况·</p>
@@ -510,8 +515,8 @@ TCP握手挥手详解</p>
 1、并发
 2、共享
 3、虚拟
-4、异步
-<a href="https://www.cnblogs.com/gxl666/p/11155528.html">https://www.cnblogs.com/gxl666/p/11155528.html</a></p>
+4、异步</p>
+<p><a href="https://www.cnblogs.com/gxl666/p/11155528.html">https://www.cnblogs.com/gxl666/p/11155528.html</a></p>
 <p>阻塞与非阻塞 同步与异步</p>
 <p><a href="https://www.zhihu.com/question/19732473">https://www.zhihu.com/question/19732473</a>
 ##算法/智力题##</p>

@@ -16,7 +16,7 @@
       <pubDate>Sat, 25 Apr 2020 00:36:11 +0800</pubDate>
       
       <guid>https://AIMHEctor.github.io/2020/04/c-/</guid>
-      <description>new 是C++的操作符，malloc是C的标准库函数 new会调用构造函数，而malloc()不会 new返回指定类型的指针，而malloc()返回</description>
+      <description>1.new 与 malloc new 是C++的操作符，malloc是C的标准库函数 new会调用构造函数，而malloc()不会 new返回指定类型的指针，而malloc(</description>
     </item>
     
     <item>
