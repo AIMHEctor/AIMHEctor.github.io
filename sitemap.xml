@@ -10,7 +10,35 @@
   </url>
   
   <url>
+    <loc>https://AIMHEctor.github.io/categories/</loc>
+    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/tags/leecode/</loc>
+    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/categories/leecode/</loc>
+    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://AIMHEctor.github.io/posts/</loc>
+    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/tags/</loc>
     <lastmod>2020-05-06T23:29:40+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -19,20 +47,6 @@
   <url>
     <loc>https://AIMHEctor.github.io/2020/05/839/</loc>
     <lastmod>2020-05-06T23:29:31+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://AIMHEctor.github.io/categories/</loc>
-    <lastmod>2020-05-06T21:07:03+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://AIMHEctor.github.io/tags/</loc>
-    <lastmod>2020-05-06T21:07:03+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
