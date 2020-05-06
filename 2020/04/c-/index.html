@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>C&#43;&#43;基础问题 - </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="Guide to Learning CPP" />
+  <meta name="generator" content="Hugo 0.69.0 with theme pure" />
+  <title>C&#43;&#43;基础问题 - Pure theme for Hugo</title>
+  
+  
+  <link rel="stylesheet" href="https://AIMHEctor.github.io/css/style.min.542ebadc4358d5605f54138fc03715d910407e0f8416caa8f34cf20c3ccb4a1a.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="C&#43;&#43;基础问题" />
+<meta property="og:description" content="Guide to Learning CPP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://AIMHEctor.github.io/2020/04/c-/" />
+<meta property="article:published_time" content="2020-04-25T00:36:11+08:00" />
+<meta property="article:modified_time" content="2020-04-25T00:36:11+08:00" />
+<meta itemprop="name" content="C&#43;&#43;基础问题">
+<meta itemprop="description" content="Guide to Learning CPP">
+<meta itemprop="datePublished" content="2020-04-25T00:36:11&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-25T00:36:11&#43;08:00" />
+<meta itemprop="wordCount" content="6047">
+
+
+
+<meta itemprop="keywords" content="C&#43;&#43;," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;基础问题"/>
+<meta name="twitter:description" content="Guide to Learning CPP"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-white" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/xiaoheiAh" target="_blank">
+            <img class="img-circle img-rotate" src="https://AIMHEctor.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Hector</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">STU</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>yantai, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://AIMHEctor.github.io/categories/syntax/" class="category-list-link">syntax</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://AIMHEctor.github.io/categories/themes/" class="category-list-link">themes</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/c&#43;&#43;/" class="tag-list-link">c&#43;&#43;</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/css/" class="tag-list-link">css</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/emoji/" class="tag-list-link">emoji</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/privacy/" class="tag-list-link">privacy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/shortcodes/" class="tag-list-link">shortcodes</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/text/" class="tag-list-link">text</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://AIMHEctor.github.io/tags/themes/" class="tag-list-link">themes</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://AIMHEctor.github.io/2020/04/c-/" class="title">C&#43;&#43;基础问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-25 00:36:11 &#43;0800 CST" itemprop="datePublished">2020-04-25</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://AIMHEctor.github.io/2019/03/markdown-syntax/" class="title">Markdown Syntax Guide</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://AIMHEctor.github.io/2019/03/rich-content/" class="title">Rich Content</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://AIMHEctor.github.io/2019/03/placeholder-text/" class="title">Placeholder Text</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-09</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://AIMHEctor.github.io/2019/03/emoji-support/" class="title">Emoji Support</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-05</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/c-/"
+    >C&#43;&#43;基础问题</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://AIMHEctor.github.io/2020/04/c-/" class="article-date">
+  <time datetime="2020-04-25 00:36:11 &#43;0800 CST" itemprop="datePublished">2020-04-25</time>
+</a>
+</span>
+  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/c&#43;&#43;/"> C&#43;&#43; </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/c-/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6047words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 13minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <ul>
+<li>new 是C++的操作符，malloc是C的标准库函数</li>
+<li>new会调用构造函数，而malloc()不会</li>
+<li>new返回指定类型的指针，而malloc()返回void*</li>
+<li>new会自动计算需要分配的空间，而malloc()需要手工计算字节数。</li>
+<li>new可以被重载，而malloc()不能。</li>
+</ul>
+<p>使用new时实际执行的三步操作：</p>
+<ol>
+<li>调用::operator new 配置内存</li>
+<li>调用Foo()构造函数构造对象并传入初始值</li>
+<li>返回一个指向该对象的指针</li>
+</ol>
+<p><strong>2.内存溢出和内存泄漏</strong>
+内存溢出，指的是系统不能再分配出你所需要的空间。</p>
+<p>内存泄漏，指的是没有释放掉已经不再使用的内存</p>
+<p><strong>内存泄漏的类型</strong></p>
+<ul>
+<li>堆内存泄漏
+<ul>
+<li>程序运行中根据需要从堆内存中分配一块内存，并且没有释放掉。</li>
+</ul>
+</li>
+<li>系统资源泄漏</li>
+</ul>
+<p><strong>常见的内存溢出</strong></p>
+<ul>
+<li>内存分配未成功，却使用了它。</li>
+<li>内存分配虽然成功，但是尚未初始化就引用它 。</li>
+<li>内存分配成功并且已经初始化，但操作越过了内存的边界。</li>
+<li>忘记了释放内存，造成内存泄露。</li>
+</ul>
+<p><strong>2.智能指针(将普通的指针封装为一个栈对象)</strong></p>
+<p>智能指针可以防止忘记调用delete释放内存，以及多次释放同一个指针所造成的程序崩溃。实现了资源自动释放。</p>
+<ul>
+<li>unique_ptr
+<ul>
+<li>生命周期：从指针创建开始到离开作用域。</li>
+<li>如果没有多线程共享资源，则使用unique_ptr</li>
+</ul>
+</li>
+<li>shared_ptr
+<ul>
+<li>智能指针是模版类，使用make_shared函数来初始化 ，不能将指针直接复制给一个智能指针</li>
+<li>get函数获取原始指针</li>
+<li>使用<strong>引用计数</strong>实现多个智能指针同时指向一个对象</li>
+<li>拷贝和赋值，拷贝使得对象的引用计数加一，赋值使得引用计数减一，指向后来的对象。</li>
+<li>循环引用，会导致堆内存无法正确释放导致内存泄漏。</li>
+</ul>
+</li>
+<li>weak_ptr
+<ul>
+<li>不控制所指对象的生命周期，指向一个由shared_ptr管理的对象</li>
+<li>使用shared_ptr来初始化它</li>
+<li>auto p = make_shared<!-- raw HTML omitted --> 42 ; weak_ptr<!-- raw HTML omitted --> wp(p)<!-- raw HTML omitted -->//wp弱共享p,<strong>p的引用计数不变。</strong></li>
+<li>expired()观测引用计数，若为true则引用计数为0；lock(),获取一个可用的shared_ptr对象，从而操作资源，若引用计数为0则返回一个存储空指针的shared_ptr</li>
+</ul>
+</li>
+</ul>
+<p><strong>内部实现</strong></p>
+<p>内部实现<a href="https://blog.csdn.net/gammag/article/details/88655744">https://blog.csdn.net/gammag/article/details/88655744</a></p>
+<p><strong>3. 虚函数</strong></p>
+<p><strong>虚函数的作用</strong>
+C++中的虚函数的作用主要是实现了多态的机制。基类定义虚函数，子类可以重写该函数；在派生类中对基类定义的虚函数进行重写时，需要在派生类中声明该方法为虚方法。</p>
+<p>当子类重新定义了父类的虚函数后，当父类的指针指向子类对象的地址时，[即B b; A a = &amp;b;] 父类指针根据赋给它的不同子类指针，动态的调用子类的该函数，而不是父类的函数（如果不使用virtual方法，请看后面★*），且这样的函数调用发生在运行阶段，而不是发生在编译阶段，称为动态联编。而函数的重载可以认为是多态，只不过是静态的。注意，非虚函数静态联编，效率要比虚函数高，但是不具备动态联编能力。</p>
+<p><strong>虚函数的实现机制</strong></p>
+<p>虚函数表</p>
+<p>1、当类中存在虚函数里.则编译器会在编译期自动的给该类生成一个函数表，并在所有该类的对像中放入一个隐式变量vptr,该变量是一个指针变量，它的值指向那个类中的由编译器生成的虚函数表.</p>
+<p>2、每个类自己的虚函数入口都在这张表中维护，调用方法的时候会隐式的传入一个this指针，然后系统会根据this指针找到对应的vptr,进而找到对应的虚函数表，找到真正方法的地址，然后才去调用这个方法，这可以叫动态绑定。</p>
+<p>3、虚函数表存放重写的虚函数，当基类的指针指向派生类的对象时，调用虚函数时都会根据vptr来选择虚函数，而基类的虚函数在派生类里已经被改写或者说已经不存在了，所以也就只能调用派生类的虚函数版本了.</p>
+<p>实现机制
+<a href="https://www.cnblogs.com/malecrab/p/5572730.html">https://www.cnblogs.com/malecrab/p/5572730.html</a>
+<a href="https://www.cnblogs.com/yinbiao/p/11603618.html">https://www.cnblogs.com/yinbiao/p/11603618.html</a>
+vptr问题<a href="https://www.cnblogs.com/yangguang-it/p/6547314.html">https://www.cnblogs.com/yangguang-it/p/6547314.html</a></p>
+<p><strong>析构函数可以是虚函数吗</strong></p>
+<p>如果基类会被继承，则需要将析构函数设置为虚函数。</p>
+<p>基类指针可以指向派生类的对象（多态性），如果删除该指针delete[] p;就会调用该指针指向的派生类析构函数，而派生类的析构函数又会自动调用基类的析构函数，这样整个派生类的对象完全被释放。如果析构函数不被声明为虚函数，则编译器实施静态绑定，在删除基类指针时，只会调用基类的析构函数而不调用派生类的析构函数，这样就会造成派生类对象析构不完全。所以，将析构函数声明为虚函数是十分必要的。</p>
+<p><strong>构造函数可以调用虚函数</strong></p>
+<p>构造函数是可以调用虚函数的，例子 <a href="https://paste.ubuntu.com/p/qwGZRNjj2m/">https://paste.ubuntu.com/p/qwGZRNjj2m/</a></p>
+<p>总结：是进行静态绑定，首先构造父类构造函数，虚函数也调用父类的，然后调用子类构造函数，虚函数也调用子类的。</p>
+<p><strong>纯虚函数和虚函数</strong></p>
+<p>有纯虚函数的类为抽象类。
+纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。</p>
+<p>在基类中实现纯虚函数的方法是在函数原型后加“=0” virtual void function()=0</p>
+<p>详情见：<a href="https://www.cnblogs.com/steven66/p/5013695.html">https://www.cnblogs.com/steven66/p/5013695.html</a>。</p>
+<p><strong>4.面向对象理解</strong></p>
+<p>详情见：<a href="https://www.cnblogs.com/ycg0808/p/5479213.html">https://www.cnblogs.com/ycg0808/p/5479213.html</a>。</p>
+<p>四大特征：继承、多态、封装、抽象。</p>
+<p>继承：子类继承父类的特征和行为。子类可以有父类的方法，属性（非private）。子类也可以对父类进行扩展，也可以重写父类的方法。缺点就是提高了代码之间的耦合。final可以修饰类，方法，属性。修饰的类不能继承，修饰的方法不能重写，修饰的属性不能修改。</p>
+<p>多态：多态就是不同类的对象，对同一消息做出不同响应就叫多态。</p>
+<p>封装：封装就是把过程和数据包围起来，对数据的访问只能通过特定的界面。能降低耦合性。</p>
+<p>抽象：分为过程抽象和数据抽象。</p>
+<p>详情见：<a href="https://www.cnblogs.com/msn-z/p/7802576.html">https://www.cnblogs.com/msn-z/p/7802576.html</a>。</p>
+<p><strong>5.内存模型</strong></p>
+<p>栈（局部变量，编译时分配）
+堆（动态存储区）（new程序时分配）
+静态存储区（所有的静态/全局变量）
+数据区
+代码区</p>
+<p>C分为4个区：堆，栈，静态全局变量区，常量区。
+C++内存分为5个区：</p>
+<p>1：栈区（stack）-由编译器自动分配释放，存放函数参数值，局部变量等。其操作类似于数据机构中栈。</p>
+<p>2：堆区（heap）-一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中堆是两回事，分配方式类似于链表。</p>
+<p>3：全局区（静态区static）-全局变量和静态变量存取释放在一快，初始化全局变量和静态变量在一块区域。未初始化全局变量和未初始化静态变量在相邻另一块区域，程序结束后由系统释放。</p>
+<p>4：文字常量区（coment）-常量字符串就是放在这里。程序结束后由系统释放。</p>
+<p>5： 程序代码区（code）- 存放函数二进制代码
+详情见：<a href="https://www.cnblogs.com/Stultz-Lee/p/6751522.html">https://www.cnblogs.com/Stultz-Lee/p/6751522.html</a>。</p>
+<p><strong>5.常见设计模式</strong></p>
+<p>详细链接</p>
+<p><a href="https://blog.csdn.net/u010993820/article/details/80968933">https://blog.csdn.net/u010993820/article/details/80968933</a></p>
+<p>单例模式详解<a href="https://blog.csdn.net/zhanghuaichao/article/details/79459130">https://blog.csdn.net/zhanghuaichao/article/details/79459130</a></p>
+<p><strong>6.inline</strong></p>
+<p>C++ 用 inline 关键字较好地解决了函数调用开销的问题。</p>
+<p>增加了 inline 关键字的函数称为“内联函数”。内联函数和普通函数的区别在于：当编译器处理调用内联函数的语句时，不会将该语句编译成函数调用的指令，而是直接将整个函数体的代码插人调用语句处，就像整个函数体在调用处被重写了一遍一样。</p>
+<p>有了内联函数，就能像调用一个函数那样方便地重复使用一段代码，而不需要付出执行函数调用的额外开销。很显然，使用内联函数会使最终可执行程序的体积增加。以时间换取空间，或增加空间消耗来节省时间，这是计算机学科中常用的方法。</p>
+<p>内联函数中的代码应该只是很简单、执行很快的几条语句。若比较复杂则不会判为内联函数。</p>
+<p>详细<a href="http://c.biancheng.net/view/199.html">http://c.biancheng.net/view/199.html</a></p>
+<h2 id="stl-源码内容">STL 源码内容</h2>
+<p><strong>1.STL的vector底层扩容</strong></p>
+<p>vector实际上就是一个动态数组，底层是一段连续的线性内存空间。使用三个迭代器表示（指针）</p>
+<p>当大小和容量相等时，vector就需要扩容，此时需要三个步骤：</p>
+<ul>
+<li>弃用现在的内存空间，申请一个两倍（1.5倍）大小的新的内存空间。</li>
+<li>将旧的内存空间中的数据写入</li>
+<li>将旧内存空间释放</li>
+</ul>
+<p><strong>2.STL的map、set底层数据结构</strong></p>
+<p>查询的时间复杂度为O(lgn);空间复杂度为O(n);
+底层数据结构都为红黑树</p>
+<p>红黑树底层提供两种insert操作：insert_unique() /insert_equal()</p>
+<p>红黑树的实现：五个模版（key value keyofvalue compare alloc）</p>
+<p><strong>set</strong></p>
+<ul>
+<li>set/multiset元素的value和key合一：value就是key</li>
+<li>不可以通过迭代器修改元素（set的iterator为红黑树的const 迭代器，从而避免通过迭代器改变元素）</li>
+<li>set的操作都转给底层的模版进行操作，从技术的角度来说，set是一种container adapter（容器适配器，类似queue）</li>
+</ul>
+<p><strong>map</strong></p>
+<ul>
+<li>map中key不可以修改，value可以。value和key组成value</li>
+<li>红黑树的selectlst（select first）获取key （gcc）</li>
+<li>实现第一条：把value包装成pair，其中key设置为const</li>
+<li>独特的operator[],如果key不存在，lower_bound()找到合适的位置，并创建一个key插入红黑树</li>
+</ul>
+<p><strong>3.容器hashtable</strong></p>
+<ul>
+<li>
+<p>空间足够时，直接按照编号插入</p>
+</li>
+<li>
+<p>空间不足时，编号取余（空间大小）</p>
+</li>
+<li>
+<p>如果发生冲突则通过链表串起来，但是如果串联的个数大于buckets vector（篮子的数量）则进行散列（篮子变为两倍附近的素数，53-&gt;97）</p>
+</li>
+<li>
+<p>hashtable的实现：value、key、HashFcn（将放入的东西映射为编号）、ExtractKey（如何提取key）、EqualKey（定义key相等）</p>
+</li>
+</ul>
+<h2 id="计算机网络-">计算机网络</h2>
+<p>Q1.OSI有哪几层？</p>
+<ol>
+<li>**应用层(数据):**确定进程之间通信的性质以满足用户需要以及提供网络与用户应用</li>
+<li>**表示层(数据):**主要解决拥护信息的语法表示问题，如加密解密</li>
+<li>**会话层(数据):**提供包括访问验证和会话管理在内的建立和维护应用之间通信的机制，如服务器验证用户登录便是由会话层完成的</li>
+<li>**传输层(段):**实现网络不同主机上用户进程之间的数据通信，可靠与不可靠的传输，传输层的错误检测，流量控制等</li>
+<li>**网络层(包):**提供逻辑地址(IP)、选路，数据从源端到目的端的。
+传输</li>
+<li>**数据链路层(帧):**将上层数据封装成帧，用 MAC 地址访问媒介，错误检测与修正。</li>
+<li>**物理层(比特流):**设备之间比特流的传输，物理接口，电气特性等。</li>
+</ol>
+<p>Q2.三次握手四次挥手（状态转换）</p>
+<p>三次握手四次挥手相关问题<a href="https://www.jianshu.com/p/29868fb82890">https://www.jianshu.com/p/29868fb82890</a></p>
+<p>###三次握手###
+<strong>LISTEN:</strong> 服务器端等待连接的状态。服务器经过 socket，bind，listen 函数之后进入此状态，开始监听客户端发过来的连接请求。此称为应用程序被动打开（等到客户端连接请求）。</p>
+<p>**SYN_SENT：**第一次握手发生阶段，客户端发起连接。客户端调用 connect，发送 SYN 给服务器端，然后进入 SYN_SENT 状态，等待服务器端确认（三次握手中的第二个报文）。如果服务器端不能连接，则直接进入CLOSED状态。</p>
+<p>**SYN_RCVD：**第二次握手发生阶段，跟 3 对应，这里是服务器端接收到了客户端的 SYN，此时服务器由 LISTEN 进入 SYN_RCVD状态，同时服务器端回应一个 ACK，然后再发送一个 SYN 即 SYN+ACK 给客户端。状态图中还描绘了这样一种情况，当客户端在发送 SYN 的同时也收到服务器端的 SYN请求，即两个同时发起连接请求，那么客户端就会从 SYN_SENT 转换到 SYN_REVD 状态。</p>
+<p>**ESTABLISHED：**第三次握手发生阶段，客户端接收到服务器端的 ACK 包（ACK，SYN）之后，也会发送一个 ACK 确认包，客户端进入 ESTABLISHED 状态，表明客户端这边已经准备好，但TCP 需要两端都准备好才可以进行数据传输。服务器端收到客户端的 ACK 之后会从 SYN_RCVD 状态转移到 ESTABLISHED 状态，表明服务器端也准备好进行数据传输了。这样客户端和服务器端都是 ESTABLISHED 状态，就可以进行后面的数据传输了。所以 ESTABLISHED 也可以说是一个数据传送状态。
+###四次挥手###
+TCP握手挥手详解</p>
+<p><a href="https://www.jianshu.com/p/29868fb82890">https://www.jianshu.com/p/29868fb82890</a></p>
+<p>###linux###
+基本命令<a href="https://blog.csdn.net/qq_34926773/article/details/82216926">https://blog.csdn.net/qq_34926773/article/details/82216926</a></p>
+<p>Linux的proc目录：/proc是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，用户可以通过这些文件查看有关系统硬件及当前正在运行进程的信息，甚至可以通过更改其中某些文件来改变内核的运行状态。</p>
+<p>详情：<a href="https://blog.csdn.net/mediatec/article/details/88578101">https://blog.csdn.net/mediatec/article/details/88578101</a></p>
+<p>**查看端口状态：**netstat -ntulp |grep 80 //查看所有80端口使用情况·</p>
+<p><strong>-t :</strong> 指明显示TCP端口 
+**-u : **指明显示UDP端口 
+<strong>-l :</strong> 仅显示监听套接字(所谓套接字就是使应用程序能够读写与收发通讯协议(protocol)与资料的程序) 
+<strong>-p :</strong> 显示进程标识符和程序名称，每一个套接字/端口都属于一个程序。 
+<strong>-n :</strong> 不进行DNS轮询，显示IP(可以加速操作) </p>
+<p>查看某个进程的状态：ps -ef是查看所有的进程，然后用grep筛选出你要的信息。 eg</p>
+<p>操作系统四大特征
+1、并发
+2、共享
+3、虚拟
+4、异步
+<a href="https://www.cnblogs.com/gxl666/p/11155528.html">https://www.cnblogs.com/gxl666/p/11155528.html</a></p>
+<p>阻塞与非阻塞 同步与异步</p>
+<p><a href="https://www.zhihu.com/question/19732473">https://www.zhihu.com/question/19732473</a>
+##算法/智力题##</p>
+<p><strong>大规模排序问题。</strong></p>
+<p>给定一个大文件，里面存储着很多IP地址，这个大文件内存放不下。找出这个文件中出现次数最多的10个IP。</p>
+<p>内存中放不下的意思是不能直接将这个大文件加载进内存进行排序。这种情况一般选择使用“分治”的思想。</p>
+<p>具体做法如下：</p>
+<p>遍历文件a，对每个ip求取hash(ip)%100(这个hash操作是他想考察的重点)，然后根据所得值将ip分别存储到100个小文件（设为a0,a1,&hellip;a99）当中。然后将这些文件存在硬盘上。
+依次将这些小文件读取到内存中进行排序，并依次取前10个出现最多的IP放入另一个文件中，最后在对这10 * 100个IP排序，取出出现次数最多的10个。</p>
+<p><strong>给定a、b两个文件，各存放50亿个url，每个url各占用64字节，内存限制是4G，如何找出a、b文件共同的url？</strong></p>
+<p> 分别扫描A，B两个文件，根据hash(url)%k(k为正整数，比如k = 1000，那么每个小文件只占用300M，内存完全可以放得下)将url划分到不同的k个文件中，比如a0，a1,&hellip;.a999;b0，b1，&hellip;b999；</p>
+<p>     这样处理后相同的url肯定在对应的小文件中（a0 vs b0,a1 vs b1,&hellip;a999 vs b999）因为相同的url%1000的值肯定相同，不对应的小文件不可能有相同的url；</p>
+<p>    然后我们只要求出1000对小文件中相同的url即可。比如对于a0 vs b0，我们可以遍历a0，将其中的url存放到hash_map中，然后遍历b0，如果b0中的某个url在hash_map中，则说明此url在a和b中同时存在，保存下来即可。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://AIMHEctor.github.io/2020/04/c-/" title="C&#43;&#43;基础问题" target="_blank" rel="external">https://AIMHEctor.github.io/2020/04/c-/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/xiaoheiAh" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://AIMHEctor.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/xiaoheiAh" target="_blank"><span class="text-dark">Hector</span><small class="ml-1x">STU</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://AIMHEctor.github.io/2019/03/markdown-syntax/" title="Markdown Syntax Guide"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/AIMHEctor" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://AIMHEctor.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://AIMHEctor.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://AIMHEctor.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/AIMHEctor.github.io\/',
+            CONTENT_URL: 'https:\/\/AIMHEctor.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://AIMHEctor.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
