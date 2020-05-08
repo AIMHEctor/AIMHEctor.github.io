@@ -5,10 +5,19 @@
     <link>https://AIMHEctor.github.io/posts/</link>
     <description>Recent content in Posts on Pure theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 07 May 2020 16:57:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 11:43:08 +0800</lastBuildDate>
     
         <atom:link href="https://AIMHEctor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>高性能web服务器（一）：设计思路</title>
+      <link>https://AIMHEctor.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Fri, 08 May 2020 11:43:08 +0800</pubDate>
+      
+      <guid>https://AIMHEctor.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</guid>
+      <description>在编写高性能web服务器之前，首先需要构建一个支持TCP的高性能网络编程框架，有了框架之后，再添加HTTP特性的支持就会容易很多。 设计需求 需</description>
+    </item>
     
     <item>
       <title>C&#43;&#43;生命周期与编程范式</title>
