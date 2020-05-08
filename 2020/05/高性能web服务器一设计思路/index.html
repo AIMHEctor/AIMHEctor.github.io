@@ -40,7 +40,7 @@
 <meta itemprop="description" content="在编写高性能web服务器之前，首先需要构建一个支持TCP的高性能网络编程框架，有了框架之后，再添加HTTP特性的支持就会容易很多。 设计需求 需">
 <meta itemprop="datePublished" content="2020-05-08T11:43:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-08T11:43:08&#43;08:00" />
-<meta itemprop="wordCount" content="213">
+<meta itemprop="wordCount" content="1309">
 
 
 
@@ -292,8 +292,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 213words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1309words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -307,8 +307,110 @@
 </ul>
 <h2 id="设计思路-">设计思路</h2>
 <h3 id="反应堆模式设计-">反应堆模式设计</h3>
+<p><strong>event_loop</strong></p>
+<p>是一个线程绑定的无限事件循环，一旦有事件发生，就会回调预先定义好的回调函数，完成事件的处理。</p>
+<p><strong>channel</strong></p>
+<p>对于注册到event_loop上的对象，我们抽象成channel来表示。</p>
+<p><strong>acceptor</strong></p>
+<p>acceptor对象表示的是服务器监听器，acceptor对象最终会作为一个channel对象注册到event_loop上。</p>
+<p><strong>event_dispatcher</strong></p>
+<p>对事件分发机制的一种抽象，可以基于poll或epoll。这里统一设置成一个结构体来抽象这个行为。</p>
+<p><strong>channel_map</strong></p>
+<p>保存了描述字到channel的映射，这样就可以在事件发生时，根据事件类型对应的套接字快速找到chanel对象里的事件处理函数。</p>
 <h3 id="io模型和多线程模型设计-">I/O模型和多线程模型设计</h3>
+<p>I/O线程和多线程模型，主要解决event_loop的线程运行问题，以及事件分发和回调的线程执行问题。</p>
+<p><strong>therad_pool</strong></p>
+<p>维护了sub_reactor的线程列表，给主reactor提供线程，当有新的连接建立时，可以从therad_pool里获取一个线程。</p>
+<p><strong>event_loop_thread</strong></p>
 <h3 id="buffer和数据读写-">Buffer和数据读写</h3>
+<h2 id="进一步分析-">进一步分析</h2>
+<h3 id="概述-">概述</h3>
+<p>下图为event_loop的运行流程图。</p>
+<p><img src="https://pics.images.ac.cn/image/5eb524ea71931.html" alt=""></p>
+<p>  当 event_loop_run 完成之后，线程进入循环，首先执行 dispatch 事件分发，一旦有事件发生，就会调用 channel_event_activate 函数，在这个函数中完成事件回调函数 eventReadcallback 和 eventWritecallback 的调用，最后再进行 event_loop_handle_pending_channel，用来修改当前监听的事件列表，完成这个部分之后，又进入了事件分发循环。</p>
+<h3 id="event_loop分析-">event_loop分析</h3>
+<pre><code class="language-C">struct event_loop {
+    int quit;
+    const struct event_dispatcher *eventDispatcher;
+
+    /** 对应的event_dispatcher的数据. */
+    void *event_dispatcher_data;
+    struct channel_map *channelMap;
+
+    int is_handle_pending;
+    struct channel_element *pending_head;
+    struct channel_element *pending_tail;
+
+    pthread_t owner_thread_id;
+    pthread_mutex_t mutex;
+    pthread_cond_t cond;
+    int socketPair[2];
+    char *thread_name;
+};
+</code></pre>
+<h3 id="event_loop_run--">event_loop_run </h3>
+<p>event_loop 就是一个无限 while 循环，不断地在分发事件。</p>
+<pre><code class="language-c">
+/**
+ *
+ * 1.参数验证
+ * 2.调用dispatcher来进行事件分发,分发完回调事件处理函数
+ */
+int event_loop_run(struct event_loop *eventLoop) {
+    assert(eventLoop != NULL);
+
+    struct event_dispatcher *dispatcher = eventLoop-&gt;eventDispatcher;
+
+    if (eventLoop-&gt;owner_thread_id != pthread_self()) {
+        exit(1);
+    }
+
+    yolanda_msgx(&quot;event loop run, %s&quot;, eventLoop-&gt;thread_name);
+    struct timeval timeval;
+    timeval.tv_sec = 1;
+
+    while (!eventLoop-&gt;quit) {
+        //block here to wait I/O event, and get active channels
+        dispatcher-&gt;dispatch(eventLoop, &amp;timeval);
+
+        //handle the pending channel
+        event_loop_handle_pending_channel(eventLoop);
+    }
+
+    yolanda_msgx(&quot;event loop end, %s&quot;, eventLoop-&gt;thread_name);
+    return 0;
+}
+</code></pre>
+<p>在 event_loop 不退出的情况下，一直在循环，循环体中调用了 dispatcher 对象的 dispatch 方法来等待事件的发生。</p>
+<h3 id="channel-对象分析-">channel 对象分析</h3>
+<p>channel 对象是用来和 event_dispather 进行交互的最主要的结构体，它抽象了事件分发。一个 channel 对应一个描述字，描述字上可以有 READ 可读事件，也可以有 WRITE 可写事件。channel 对象绑定了事件处理函数 event_read_callback 和 event_write_callback。</p>
+<pre><code class="language-c">
+typedef int (*event_read_callback)(void *data);
+
+typedef int (*event_write_callback)(void *data);
+
+struct channel {
+    int fd;
+    int events;   //表示event类型
+
+    event_read_callback eventReadCallback;
+    event_write_callback eventWriteCallback;
+    void *data; //callback data, 可能是event_loop，也可能是tcp_server或者tcp_connection
+};
+</code></pre>
+<h3 id="channel_map-对象分析-">channel_map 对象分析</h3>
+<p>event_dispatcher 在获得活动事件列表之后，需要通过文件描述字找到对应的 channel，从而回调 channel 上的事件处理函数 event_read_callback 和 event_write_callback，为此，设计了 channel_map 对象。</p>
+<pre><code class="language-c">
+/**
+ * channel映射表, key为对应的socket描述字
+ */
+struct channel_map {
+    void **entries;
+
+    /* The number of entries available in entries */
+    int nentries;
+};
+</code></pre>
 
     </div>
     <div class="article-footer">
