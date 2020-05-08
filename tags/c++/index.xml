@@ -5,10 +5,19 @@
     <link>https://AIMHEctor.github.io/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on Pure theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Apr 2020 00:36:11 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 16:57:09 +0800</lastBuildDate>
     
         <atom:link href="https://AIMHEctor.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;生命周期与编程范式</title>
+      <link>https://AIMHEctor.github.io/2020/05/c-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Thu, 07 May 2020 16:57:09 +0800</pubDate>
+      
+      <guid>https://AIMHEctor.github.io/2020/05/c-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>C++的编译链接 预处理 编译 汇编 链接 C++的编程范式 面向过程指的是顺序执行语句、子程序，把任务分解成若干个步骤去执行，最终达成目标。 面向对象的</description>
+    </item>
     
     <item>
       <title>861. 翻转矩阵后的得分</title>

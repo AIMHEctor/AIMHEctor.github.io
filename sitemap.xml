@@ -3,6 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://AIMHEctor.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-05-07T16:57:09+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/2020/05/c-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2020-05-07T16:57:09+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/posts/</loc>
+    <lastmod>2020-05-07T16:57:09+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://AIMHEctor.github.io/tags/</loc>
+    <lastmod>2020-05-07T16:57:09+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://AIMHEctor.github.io/2020/05/861/</loc>
     <lastmod>2020-05-06T23:29:40+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -25,20 +53,6 @@
   
   <url>
     <loc>https://AIMHEctor.github.io/categories/leecode/</loc>
-    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://AIMHEctor.github.io/posts/</loc>
-    <lastmod>2020-05-06T23:29:40+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://AIMHEctor.github.io/tags/</loc>
     <lastmod>2020-05-06T23:29:40+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -68,13 +82,6 @@
   <url>
     <loc>https://AIMHEctor.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2020-05-06T21:07:03+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://AIMHEctor.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-04-25T00:36:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
