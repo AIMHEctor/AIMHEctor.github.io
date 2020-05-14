@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>买卖股票问题</title>
+      <link>https://aimhector.github.io/2020/05/%E4%B9%B0%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 14 May 2020 22:04:13 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E4%B9%B0%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>买卖股票问题有多种变体，在一些变体中需要考虑动态规划的思路才能够更好的解决。题目大意是给定一个数组，第i 个元素即股票在第i 天的价格，求解通过</description>
+    </item>
+    
+    <item>
       <title>高性能web服务器（二）：多线程设计</title>
       <link>https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Sun, 10 May 2020 10:51:27 +0800</pubDate>

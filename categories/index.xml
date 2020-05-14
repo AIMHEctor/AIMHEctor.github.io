@@ -5,10 +5,19 @@
     <link>https://aimhector.github.io/categories/</link>
     <description>Recent content in Categories on Pure theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 May 2020 10:51:27 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 22:04:13 +0800</lastBuildDate>
     
         <atom:link href="https://aimhector.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>买卖股票问题</title>
+      <link>https://aimhector.github.io/2020/05/%E4%B9%B0%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 14 May 2020 22:04:13 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E4%B9%B0%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>买卖股票问题有多种变体，在一些变体中需要考虑动态规划的思路才能够更好的解决。题目大意是给定一个数组，第i 个元素即股票在第i 天的价格，求解通过</description>
+    </item>
     
     <item>
       <title>高性能web服务器（二）：多线程设计</title>
