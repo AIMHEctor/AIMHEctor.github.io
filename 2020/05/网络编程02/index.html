@@ -33,7 +33,7 @@
   <meta property="og:title" content="高性能web服务器（一）：设计思路" />
 <meta property="og:description" content="在编写高性能web服务器之前，首先需要构建一个支持TCP的高性能网络编程框架，有了框架之后，再添加HTTP特性的支持就会容易很多。 设计需求 需" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" />
+<meta property="og:url" content="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" />
 <meta property="article:published_time" content="2020-05-08T11:43:08+08:00" />
 <meta property="article:modified_time" content="2020-05-08T11:43:08+08:00" />
 <meta itemprop="name" content="高性能web服务器（一）：设计思路">
@@ -207,7 +207,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BE%E8%AE%A1/" class="title">高性能web服务器（二）：多线程设计</a>
+                        <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="title">高性能web服务器（二）：多线程设计</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-05-10 10:51:27 &#43;0800 CST" itemprop="datePublished">2020-05-10</time>
@@ -217,7 +217,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" class="title">高性能web服务器（一）：设计思路</a>
+                        <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="title">高性能web服务器（一）：设计思路</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-05-08 11:43:08 &#43;0800 CST" itemprop="datePublished">2020-05-08</time>
@@ -268,7 +268,7 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/"
+    href="/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/"
     >高性能web服务器（一）：设计思路</a
   >
 </h1>
@@ -277,7 +277,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" class="article-date">
+<a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="article-date">
   <time datetime="2020-05-08 11:43:08 &#43;0800 CST" itemprop="datePublished">2020-05-08</time>
 </a>
 </span>
@@ -290,7 +290,7 @@
     <a class="article-tag-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"> 网络编程 </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/#comments"
             class="article-comment-link">Comments</a></span>
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1433words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
@@ -402,8 +402,7 @@ struct channel {
 </code></pre>
 <h3 id="channel_map-对象分析-">channel_map 对象分析</h3>
 <p>event_dispatcher 在获得活动事件列表之后，需要通过文件描述字找到对应的 channel，从而回调 channel 上的事件处理函数 event_read_callback 和 event_write_callback，为此，设计了 channel_map 对象。</p>
-<pre><code class="language-c">
-/**
+<pre><code class="language-C++">/**
  * channel映射表, key为对应的socket描述字
  */
 struct channel_map {
@@ -411,7 +410,7 @@ struct channel_map {
 
     /* The number of entries available in entries */
     int nentries;
-};
+    };
 </code></pre>
 
     </div>
@@ -420,7 +419,7 @@ struct channel_map {
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" title="高性能web服务器（一）：设计思路" target="_blank" rel="external">https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</a>
+      <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" title="高性能web服务器（一）：设计思路" target="_blank" rel="external">https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -457,7 +456,7 @@ struct channel_map {
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
             </li>
             <li class="next">
-                <a href="https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BE%E8%AE%A1/"
+                <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/"
                     title="高性能web服务器（二）：多线程设计"><span>Newer&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
