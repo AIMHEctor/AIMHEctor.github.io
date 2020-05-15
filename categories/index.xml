@@ -20,6 +20,24 @@
     </item>
     
     <item>
+      <title>高性能web服务器（二）：多线程设计</title>
+      <link>https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sun, 10 May 2020 10:51:27 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
+      <description>关于多线程有两个重要问题: 第一是主线程如何等地啊多个子线程完成初始化。 第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。</description>
+    </item>
+    
+    <item>
+      <title>高性能web服务器（一）：设计思路</title>
+      <link>https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Fri, 08 May 2020 11:43:08 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E9%AB%98%E6%80%A7%E8%83%BDweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</guid>
+      <description>在编写高性能web服务器之前，首先需要构建一个支持TCP的高性能网络编程框架，有了框架之后，再添加HTTP特性的支持就会容易很多。 设计需求 需</description>
+    </item>
+    
+    <item>
       <title>C&#43;&#43;生命周期与编程范式</title>
       <link>https://aimhector.github.io/2020/05/c-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
       <pubDate>Thu, 07 May 2020 16:57:09 +0800</pubDate>
