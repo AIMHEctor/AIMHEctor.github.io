@@ -5,10 +5,37 @@
     <link>https://aimhector.github.io/categories/leetcode/</link>
     <description>Recent content in Leetcode on Pure theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 14 May 2020 22:04:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 21:57:58 +0800</lastBuildDate>
     
         <atom:link href="https://aimhector.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>排序</title>
+      <link>https://aimhector.github.io/2020/05/%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 16 May 2020 21:58:37 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E6%8E%92%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>单例模式</title>
+      <link>https://aimhector.github.io/2020/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sat, 16 May 2020 21:57:58 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>单例模式保证一个类只有一个实例，并提供了该实例的全局访问。 实现一：饿汉式 class Singleton{ public: static Singleton* getInstance(){ //首先检查对象是否存在 if(m_instance == nullptr){ m_instance = new Singleton(); } return m_instance; } private: Singleton(){}; ~Singleton(){}; static Singleton*</description>
+    </item>
+    
+    <item>
+      <title>二叉树路径</title>
+      <link>https://aimhector.github.io/2020/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Sat, 16 May 2020 21:28:09 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B7%AF%E5%BE%84/</guid>
+      <description>leetcode.113 路径总和2 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。 说明: 叶子节点是指没有子节点的节点。 示例: 给</description>
+    </item>
     
     <item>
       <title>买卖股票问题</title>
