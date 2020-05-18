@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>高性能web服务器（二）：多线程设计 - </title>
+    <title>概率问题（待更新） - </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -21,32 +21,32 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="关于多线程有两个重要问题: 第一是主线程如何等地啊多个子线程完成初始化。 第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。" />
+  <meta name="description" content="1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水 抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果" />
   <meta name="generator" content="Hugo 0.69.0 with theme pure" />
-  <title>高性能web服务器（二）：多线程设计 - Pure theme for Hugo</title>
+  <title>概率问题（待更新） - Pure theme for Hugo</title>
   
   
   <link rel="stylesheet" href="https://aimhector.github.io/css/style.min.542ebadc4358d5605f54138fc03715d910407e0f8416caa8f34cf20c3ccb4a1a.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="高性能web服务器（二）：多线程设计" />
-<meta property="og:description" content="关于多线程有两个重要问题: 第一是主线程如何等地啊多个子线程完成初始化。 第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。" />
+  <meta property="og:title" content="概率问题（待更新）" />
+<meta property="og:description" content="1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水 抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" />
-<meta property="article:published_time" content="2020-05-10T10:51:27+08:00" />
-<meta property="article:modified_time" content="2020-05-10T10:51:27+08:00" />
-<meta itemprop="name" content="高性能web服务器（二）：多线程设计">
-<meta itemprop="description" content="关于多线程有两个重要问题: 第一是主线程如何等地啊多个子线程完成初始化。 第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。">
-<meta itemprop="datePublished" content="2020-05-10T10:51:27&#43;08:00" />
-<meta itemprop="dateModified" content="2020-05-10T10:51:27&#43;08:00" />
-<meta itemprop="wordCount" content="67">
+<meta property="og:url" content="https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-05-18T18:23:38+08:00" />
+<meta property="article:modified_time" content="2020-05-18T18:23:38+08:00" />
+<meta itemprop="name" content="概率问题（待更新）">
+<meta itemprop="description" content="1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水 抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果">
+<meta itemprop="datePublished" content="2020-05-18T18:23:38&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-18T18:23:38&#43;08:00" />
+<meta itemprop="wordCount" content="570">
 
 
 
-<meta itemprop="keywords" content="网络编程," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="高性能web服务器（二）：多线程设计"/>
-<meta name="twitter:description" content="关于多线程有两个重要问题: 第一是主线程如何等地啊多个子线程完成初始化。 第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="概率问题（待更新）"/>
+<meta name="twitter:description" content="1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水 抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -268,8 +268,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/"
-    >高性能web服务器（二）：多线程设计</a
+    href="/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/"
+    >概率问题（待更新）</a
   >
 </h1>
 
@@ -277,29 +277,36 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="article-date">
-  <time datetime="2020-05-10 10:51:27 &#43;0800 CST" itemprop="datePublished">2020-05-10</time>
+<a href="https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2020-05-18 18:23:38 &#43;0800 CST" itemprop="datePublished">2020-05-18</time>
 </a>
 </span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"> 网络编程 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"> 网络编程 </a>
-  </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/#comments"
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 67words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 570words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p><strong>关于多线程有两个重要问题:</strong></p>
-<p>第一是主线程如何等地啊多个子线程完成初始化。</p>
-<p>第二是如何通知处于事件分发中的子线程有新的事件加入、删除、修改。</p>
+      <p><strong>1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水</strong></p>
+<p>抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果两次都为正或者都为反则重新抛硬币。</p>
+<p><strong>2.54张扑克牌，平均分成3份，大小王在一份的概率</strong></p>
+<p>解答1：</p>
+<p>54张牌分成3等份，共有M=(C54取18)<em>(C36取18)</em>(C18取18)种分法。</p>
+<p>其中大小王在同一份的分法有N=(C3取1)<em>(C52取16)</em>(C36取18)*(C18取18)种。</p>
+<p>因此所求概率为P=N / M=17/53。</p>
+<p>解答2：</p>
+<p>不妨记三份为A、B、C份。大小王之一肯定在某一份中，不妨假定在A份中，概率为1/3。然后A份只有17张牌中可能含有另一张王，而B份、C份则各有18张牌可能含有另一张王，因此A份中含有另一张王的概率是17/(17+18+18)=17/53。</p>
+<p>也因此可知，A份中同时含有大小王的概率为1/3 * 17/53。</p>
+<p>题目问的是出现在同一份中的概率，因此所求概率为3*(1/3 * 17/53)=17/53。</p>
+<p><strong>3.两个人轮流抛硬币，先抛到正面的赢，问先抛的人赢的概率</strong></p>
+<p>假设A先抛：</p>
+<p>第一轮，A赢：1/2；B赢：1/2*1/2=1/4</p>
+<p>第二轮，A赢：1/2<em>1/2</em>1/2=1/8；B赢：1/2<em>1/2</em>1/2*1/2=1/16</p>
+<p>可以看出A每一轮赢的概率为等比数列，公比为1/4</p>
+<p>所以A赢的概率应该为等比数列的和，求极限为2/3</p>
 
     </div>
     <div class="article-footer">
@@ -307,7 +314,7 @@
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" title="高性能web服务器（二）：多线程设计" target="_blank" rel="external">https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/</a>
+      <a href="https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/" title="概率问题（待更新）" target="_blank" rel="external">https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -339,13 +346,13 @@
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://aimhector.github.io/2020/05/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" title="高性能web服务器（一）：设计思路"><i
+                <a href="https://aimhector.github.io/2020/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="单例模式"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
             </li>
             <li class="next">
-                <a href="https://aimhector.github.io/2020/05/%E4%B9%B0%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/"
-                    title="买卖股票问题"><span>Newer&nbsp;&nbsp;</span><i
+                <a href="https://aimhector.github.io/2020/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"
+                    title="二叉树层的层次遍历"><span>Newer&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             

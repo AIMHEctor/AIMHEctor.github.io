@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>二叉树层的层次遍历</title>
+      <link>https://aimhector.github.io/2020/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Mon, 18 May 2020 22:44:50 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>概率问题（待更新）</title>
+      <link>https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 18 May 2020 18:23:38 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/</guid>
+      <description>1.一个硬币，正面概率0.7，反面概率0.3，现在有一瓶水，怎么掷能让两个人公平的喝到水 抛两次硬币，先正后反A喝到水，先反后正B喝到水。如果</description>
+    </item>
+    
+    <item>
       <title>单例模式</title>
       <link>https://aimhector.github.io/2020/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Sat, 16 May 2020 21:57:58 +0800</pubDate>
