@@ -5,10 +5,19 @@
     <link>https://aimhector.github.io/categories/leetcode/</link>
     <description>Recent content in Leetcode on Pure theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 23 May 2020 23:43:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 22:55:46 +0800</lastBuildDate>
     
         <atom:link href="https://aimhector.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>前K个高频元素</title>
+      <link>https://aimhector.github.io/2020/05/%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Wed, 27 May 2020 22:55:46 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/05/%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/</guid>
+      <description>给定一个非空的整数数组，返回其中出现频率前 k 高的元素。 示例 1: 输入: nums = [1,1,1,2,2,3], k = 2 输出: [1,2] 示例 2: 输入: nums = [1], k = 1 输出: [1] 提示： 你可以假设给定的</description>
+    </item>
     
     <item>
       <title>判断图结构是否有环</title>
