@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>组合总和</title>
+      <link>https://aimhector.github.io/2020/08/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</link>
+      <pubDate>Tue, 18 Aug 2020 11:37:15 +0800</pubDate>
+      
+      <guid>https://aimhector.github.io/2020/08/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</guid>
+      <description>组合总和1： 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。 candidates 中的数字可以无限制重复被选取 说明: 所有数字（包括</description>
+    </item>
+    
+    <item>
       <title>前K个高频元素</title>
       <link>https://aimhector.github.io/2020/05/%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/</link>
       <pubDate>Wed, 27 May 2020 22:55:46 +0800</pubDate>

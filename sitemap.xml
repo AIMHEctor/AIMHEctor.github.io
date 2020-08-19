@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://aimhector.github.io/posts/</loc>
+    <lastmod>2020-08-18T11:37:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://aimhector.github.io/2020/08/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</loc>
+    <lastmod>2020-08-18T11:37:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://aimhector.github.io/categories/</loc>
     <lastmod>2020-05-27T22:55:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -18,13 +32,6 @@
   
   <url>
     <loc>https://aimhector.github.io/categories/leetcode/</loc>
-    <lastmod>2020-05-27T22:55:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://aimhector.github.io/posts/</loc>
     <lastmod>2020-05-27T22:55:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
